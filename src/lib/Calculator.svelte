@@ -15,7 +15,9 @@
                     break;
                 case "=":
                     var output = evalAST(parse(input),{})
-                    input = output.toString()
+                    if (output) {
+                        input = output.toString()
+                    }
                     break;
                 default:
                     break;
@@ -24,9 +26,12 @@
             input += e;
         }
     }    
+    const keypress = (e) => {
+        if (e["key"] == "Enter") callback("=")
+    }
 </script>
 
 <div class="flex justify-center items-center flex-col w-full h-full">
-    <input bind:value={input} type="text" class="my-4 w-full text-xl rounded-t-lg px-4 pt-4 border-0 border-b-2 border-b-text bg-primary-medium focus:border-b-secondary focus:outline-none transition-all duration-500">
+    <input on:keypress={keypress} bind:value={input} type="text" class="my-4 w-full text-xl rounded-t-lg px-4 pt-4 border-0 border-b-2 border-b-text bg-primary-medium focus:border-b-secondary focus:outline-none transition-all duration-500">
     <ButtonField callback={callback} />
 </div>

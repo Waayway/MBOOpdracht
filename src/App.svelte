@@ -1,5 +1,6 @@
 <script lang="ts">
   import Calculator from "./lib/Calculator.svelte";
+  import GitHubIcon from './assets/github-icon.svg'
   import "./tailwind.css"
 </script>
 
@@ -11,3 +12,9 @@
     </div>
   </div>
 </main>
+
+<div class="absolute top-0 left-0 p-4 w-24">
+  <a href="https://github.com/Waayway/MBOOpdracht" target="_blank">
+    <img src={GitHubIcon} alt="">
+  </a>
+</div>
