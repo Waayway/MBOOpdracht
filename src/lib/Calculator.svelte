@@ -51,5 +51,5 @@
         <input on:keypress={keypress} bind:value={outputInput} type="number" class="col-span-3 my-4 mx-2 w-full text-xl rounded-t-lg px-4 pt-4 border-0 border-b-2 border-b-text bg-primary-medium focus:border-b-secondary focus:outline-none transition-all duration-500">
     </div>
     <ButtonField callback={callback} />
-    <Popup bind:open={PopupOpen} bind:answer={answer} bind:input={outputInput}  />
+    <Popup bind:open={PopupOpen} bind:answer={answer} bind:input={outputInput} bind:rightanswer={rightanswer}  />
 </div>
