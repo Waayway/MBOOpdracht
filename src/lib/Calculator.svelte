@@ -38,7 +38,10 @@
         }
     }    
     const keypress = (e) => {
-        if (e["key"] == "Enter") callback("=")
+        if (e["key"] == "Enter") {
+            callback("=")
+            e.preventDefault();
+        }
     }
 </script>
 
